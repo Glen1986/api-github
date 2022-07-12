@@ -25,7 +25,7 @@ box-shadow:0 0 0 4px #ccc;
 cursor:pointer;
 margin-right:1em;
 &:focus{
-  outline: none;
+outline: none;
 }
   &:hover{
     box-shadow:0 0 1em black;

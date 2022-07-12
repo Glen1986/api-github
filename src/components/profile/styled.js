@@ -20,7 +20,7 @@ h1{
 }
 h3{
   font-size:22px;
-  font-weight: bold;
+  font-weight: 500;
 }
 h4{
   font-size:12px;
@@ -45,7 +45,8 @@ export const WrapperUsername = styled.div`
   // text-align:center;
   align-items:center;
   justify-content:space-between;
-  margin: 2.2rem 0 0 0rem;
+  margin: 0.6rem 0 0 0.5rem;
+  font-weight:400;
 a{
   text-decoration:none;
   color: black;
