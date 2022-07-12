@@ -12,11 +12,17 @@ margin:2rem;
   }
   .button{
     width:10vw;
-    background:aqua;
+    background:#2057fa;
+    color:black;
     color:#ababab;
     text-align:center;
     height:100%;
     border-radius:0 8px 8px 0;
     margin-left:4px;
+    :hover{
+      background:#29b0ff;
+      font-weight:bold;
+      color:white;
+    }
   }
 `;
