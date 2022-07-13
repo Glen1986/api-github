@@ -16,8 +16,6 @@ const Repositories = () => {
 
   },[githubState.user.login, getUserRepos, githubState.repositories])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  //
   return(
     <>
       { hasUserForSearchRepos ? (

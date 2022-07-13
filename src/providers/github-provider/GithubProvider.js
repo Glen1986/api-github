@@ -35,7 +35,6 @@ function GithubProvider({children}){
            hasUser:true,
         }));    
     api.get(`users/${username}`).then(({data})=>{
-     // console.log({data});
         setGithubState( prevState => ({
           ...prevState, 
           loading: false,
@@ -64,27 +63,6 @@ function GithubProvider({children}){
     });
   };
 
-  // const getUserRepos = () => {
-    // api.get(`users/${githubState.user.login}/repos`).then(({data})=>{
-        // setGithubState( prevState => ({
-          // ...prevState,
-            // repositories:data,
-//
-        // }));
-    // });
-  // };
-//
-  // const getUserStarred = () => {
-    // api.get(`users/${githubState.user.login}/starred`).then(({data})=>{
-       // console.log(data);
-        // setGithubState( prevState => ({
-          // ...prevState,
-            // starred:data,
-//
-        // }));
-    // });
-  // };
-//
   const getUserRepos = (username) => {
     api.get(`users/${username}/repos`).then(({data})=>{
         setGithubState( prevState => ({
