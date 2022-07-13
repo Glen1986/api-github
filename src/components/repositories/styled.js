@@ -4,7 +4,7 @@ import {Tabs, TabList, Tab, TabPanel} from 'react-tabs';
 
 export const WrapperTabs = styled(Tabs)`
 font-size:16px;
-width:50%;
+width:100%;
 `;
 
 export const WrapperTabList = styled(TabList)`
@@ -53,3 +53,10 @@ margin-top:-5px;
 `;
 
 // WrapperTabList.tabsRole = "TabPanel";
+
+export const WrapperList = styled.div`
+display:flex;
+justify-content: space-between;
+flex-wrap: wrap;
+
+`

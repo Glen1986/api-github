@@ -1,17 +1,20 @@
 import styled from 'styled-components'
 
 export const WrapperHeader = styled.section`
+display: flex;
+flex-direction: row;
+margin: 0 auto;
+width:100%;
 height:3rem;
-margin:2rem;
   .text{
     background:#eee;
-    width:80vw;
+    width:80%;
     height:100%;
     border-radius:8px 0 0 8px;
     padding:8px;
   }
   .button{
-    width:10vw;
+    width:20%;
     background:#2057fa;
     color:black;
     color:#ababab;
