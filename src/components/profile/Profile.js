@@ -4,7 +4,6 @@ import * as S from "./styled"
 
 function Profile(){
   const { githubState } = useGithub();
-  // console.log({githubState});
   return(
     <>
       <S.Wrapper>
