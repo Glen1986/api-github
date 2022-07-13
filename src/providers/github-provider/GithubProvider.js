@@ -12,6 +12,7 @@ function GithubProvider({children}){
     loading:false,
     hasUser: false,
     user:{
+      id:undefined,
       avatar_url:undefined,
       login: undefined,
       name: undefined,
@@ -39,6 +40,7 @@ function GithubProvider({children}){
           ...prevState, 
           loading: false,
             user:{
+                id:data.id,
                 avatar_url: data.avatar_url,
                 login: data.login,
                 name:  data.name,
@@ -62,20 +64,54 @@ function GithubProvider({children}){
     });
   };
 
-  // const getUserRepos = () =>{
+  // const getUserRepos = () => {
     // api.get(`users/${githubState.user.login}/repos`).then(({data})=>{
-//
         // setGithubState( prevState => ({
           // ...prevState,
             // repositories:data,
+//
         // }));
     // });
   // };
+//
+  // const getUserStarred = () => {
+    // api.get(`users/${githubState.user.login}/starred`).then(({data})=>{
+       // console.log(data);
+        // setGithubState( prevState => ({
+          // ...prevState,
+            // starred:data,
+//
+        // }));
+    // });
+  // };
+//
+  const getUserRepos = (username) => {
+    api.get(`users/${username}/repos`).then(({data})=>{
+        setGithubState( prevState => ({
+          ...prevState,
+            repositories:data,
+          
+        }));
+    });
+  };
+
+  const getUserStarred = (username) => {
+    api.get(`users/${username}/starred`).then(({data})=>{
+       console.log(data);
+        setGithubState( prevState => ({
+          ...prevState,
+            starred:data,
+          
+        }));
+    });
+  };
   const contexValue = {
     githubState,
     getUser:useCallback((username)=> getUser(username),[] ),
-    // eslint-disable-next-line react-hooks/exhaustive-deps 
-    // getUserReops: useCallback(()=> getUserRepos(),[]),
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    getUserRepos: useCallback((username) => getUserRepos(username),[getUserRepos]),
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    getUserStarred: useCallback((username) => getUserStarred(username),[getUserStarred]),
   }
   return(
     <GithubContext.Provider value={ contexValue }>

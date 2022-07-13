@@ -1,12 +1,12 @@
 import  {useContext} from "react"
 import { GithubContext } from '../../providers/github-provider/GithubProvider'
 
-function useGithub(){
+export default function useGithub(){
 
-  const {githubState, getUser, hasUser } = useContext(GithubContext)
+  const {githubState, getUser, getUserRepos, getUserStarred } = useContext(GithubContext)
   return(
-    {githubState, getUser, hasUser }
+    {githubState, getUser, getUserRepos, getUserStarred }
     )
 }
 
-export default useGithub
+// export default useGithub

@@ -1,1 +1,1 @@
-export * from './githubHook'
+export * from '../github-hook/githubHook'

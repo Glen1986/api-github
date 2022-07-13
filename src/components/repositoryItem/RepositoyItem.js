@@ -4,12 +4,12 @@ import * as S from './styled'
 function RepositoyItem({name, linkToRepo, fullname}){
   return(
     <S.Wrapper>
-      <h2>fullName:</h2>
-      <h4>{fullname}</h4>
+      <S.WrapperTitle>{name}</S.WrapperTitle>
+      <S.WrapperFullName>Full Name:</S.WrapperFullName>
       <br/>
-      <a 
-        href={linkToRepo} target="blank"
-      >{name}</a>
+        <S.WrapperLink 
+          href={linkToRepo} target="blank"
+        >{fullname}</S.WrapperLink>
     </S.Wrapper>
   )
 }
